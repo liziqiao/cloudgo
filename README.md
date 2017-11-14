@@ -1,6 +1,6 @@
 # cloudgo
-
-###martini
+-----------------------
+##martini
 
 **这次作业我选择了使用martini框架来完成，下面是go语言中文网对于这个框架的介绍：**
 
@@ -66,5 +66,64 @@ C:\Users\Administrator\Desktop\gg\cloudgo>go run main.go -p 8000
 ```
 用浏览器打开http://localhost:8000/可以看到helloworld!
 
-由于安装压力测试工具还有点问题，压力测试还没有完成
+进行压力测试，这里安装了windows版本的apache，测试结果如下，括号内的是自己家的关键参数的解释：
+```
+C:\Users\Administrator\Downloads\httpd-2.4.29-o102m-x64-vc14\Apache24\bin
+λ ab -n 1000 http://localhost:8000/
+This is ApacheBench, Version 2.3 <$Revision: 1807734 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8000
+
+Document Path:          /（这个代表请求的资源）
+Document Length:        11 bytes（文档返回的长度）
+
+Concurrency Level:      1（并发个数）
+Time taken for tests:   1.681 seconds（总的请求时间）
+Complete requests:      1000（总的请求个数）
+Failed requests:        0（失败的请求个数）
+Total transferred:      128000 bytes
+HTML transferred:       11000 bytes
+Requests per second:    594.82 [#/sec] (mean)（平均每秒的请求数）
+Time per request:       1.681 [ms] (mean)（平均每个请求消耗的时间）
+Time per request:       1.681 [ms] (mean, across all concurrent requests)
+Transfer rate:          74.35 [Kbytes/sec] received（传输速率）
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.4      0       2
+Processing:     0    1   2.1      1      10
+Waiting:        0    1   2.0      1      10
+Total:          0    2   2.1      1      10
+
+Percentage of the requests served within a certain time (ms)
+  50%      1（相应百分比的请求的完成时间）
+  66%      1
+  75%      1
+  80%      2
+  90%      4
+  95%      8
+  98%      9
+  99%      9
+ 100%     10 (longest request)
+```
+
+
 
