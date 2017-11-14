@@ -15,7 +15,7 @@ func main() {
   if len(port) == 0 {
       port = PORT
   }
-  pPort := flag.StringP("port", "p", PORT, "PORT for httpd listening")
+  pPort := flag.StringP("port", "p", PORT, "listening PORT")
   flag.Parse()
   if len(*pPort) != 0 {
       port = *pPort
