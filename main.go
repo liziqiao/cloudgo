@@ -3,7 +3,7 @@ package main
 import (
   "os"
   server "github.com/liziqiao/cloudgo/service"
-  flag "github.com/pflag"
+  flag "github.com/spf13/pflag"
 )
 
 const (
